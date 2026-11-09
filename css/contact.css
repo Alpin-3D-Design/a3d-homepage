@@ -1,0 +1,163 @@
+/* ==========================================================================
+   Kontakt, Social Media, Kaffee-Spende + Fußzeile
+   ========================================================================== */
+.contact {
+  position: relative;
+  overflow: hidden;
+  background: var(--dark-2);
+  color: #c9cfcb;
+}
+.contact::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -40px;
+  width: 240px;
+  height: 160px;
+  opacity: 0.18;
+  background: url("../assets/img/facets.svg") right top / contain no-repeat;
+}
+.contact .container {
+  position: relative;
+  padding-block: 72px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 48px 56px;
+}
+.contact__col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact__col h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--green-300);
+}
+.contact__col h2::before {
+  content: "";
+  width: 16px;
+  height: 14px;
+  background: var(--green-500);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+.contact__note {
+  font-size: 13px;
+  color: #8d958f;
+}
+
+/* Links mit Icon. Icons sind als Daten-URL eingebettet (funktioniert auch lokal per Doppelklick);
+   die Originale liegen in assets/icons/. */
+.links {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+.links--grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.links a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 44px;
+  padding: 10px 14px;
+  color: #d5dad6;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s,
+    color 0.2s;
+}
+.links a:hover {
+  background: rgba(103, 178, 111, 0.14);
+  border-color: var(--green-500);
+  color: var(--green-300);
+  transform: translateX(3px);
+}
+.links a::before,
+.btn--coffee::before {
+  content: "";
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  background: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+.links strong {
+  display: block;
+  color: var(--white);
+}
+.links small {
+  display: block;
+  font-size: 13px;
+  color: #a3aaa5;
+}
+
+.icon-mail {
+  --icon: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"%3E%3Crect x="3" y="5" width="18" height="14"/%3E%3Cpath d="M3 6l9 7 9-7"/%3E%3C/svg%3E');
+}
+.icon-discord {
+  --icon: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpath d="M4 5h16v11H9l-5 4z"/%3E%3Ccircle cx="9.5" cy="10.5" r="1" fill="%23000"/%3E%3Ccircle cx="14.5" cy="10.5" r="1" fill="%23000"/%3E%3C/svg%3E');
+}
+.icon-youtube {
+  --icon: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"%3E%3Crect x="2.5" y="5" width="19" height="14" rx="3"/%3E%3Cpolygon points="10%2C9 15%2C12 10%2C15" fill="%23000"/%3E%3C/svg%3E');
+}
+.icon-facebook {
+  --icon: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"%3E%3Crect x="3" y="3" width="18" height="18" rx="3"/%3E%3Cpath d="M15 8h-2a2 2 0 0 0-2 2v11M9 13h6"/%3E%3C/svg%3E');
+}
+.icon-instagram {
+  --icon: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"%3E%3Crect x="3" y="3" width="18" height="18" rx="5"/%3E%3Ccircle cx="12" cy="12" r="4"/%3E%3Ccircle cx="17.5" cy="6.5" r=".8" fill="%23000"/%3E%3C/svg%3E');
+}
+.btn--coffee {
+  --icon: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpath d="M4 9h12v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/%3E%3Cpath d="M16 11h2a2.5 2.5 0 0 1 0 5h-2"/%3E%3Cpath d="M8 3v3M12 3v3"/%3E%3C/svg%3E');
+  align-self: flex-start;
+}
+.btn--coffee::before {
+  transition: transform 0.3s;
+}
+.btn--coffee:hover::before {
+  transform: rotate(-12deg);
+}
+
+/* Fußzeile (auch für Impressum/Datenschutz) */
+.site-footer {
+  background: var(--dark);
+  border-top: 1px solid #333833;
+  color: #a3aaa5;
+  font-size: 15px;
+}
+.site-footer .container {
+  padding-block: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.site-footer img {
+  height: 38px;
+  width: auto;
+}
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.site-footer a {
+  color: #c6ccc8;
+}
+.site-footer a:hover {
+  color: var(--white);
+}

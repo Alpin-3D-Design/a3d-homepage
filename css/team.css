@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Team: eine Zeile je Gruppe, Karten brechen automatisch um
+   Gruppenfarbe über die Modifier-Klasse (team-group--dev usw.)
+   ========================================================================== */
+.team {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.team-group {
+  --accent: var(--green-700);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.team-group--dev {
+  --accent: var(--green-700);
+}
+.team-group--marketing {
+  --accent: var(--green-500);
+}
+.team-group--testing {
+  --accent: var(--green-300);
+}
+.team-group--core {
+  --accent: var(--lime);
+}
+
+.team-group h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  white-space: nowrap;
+}
+.team-group h3::before {
+  content: "";
+  width: 16px;
+  height: 14px;
+  background: var(--accent);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+.team-group h3::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  margin-left: 6px;
+  background: var(--line);
+}
+
+.members {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.member {
+  position: relative;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  transition:
+    transform 0.25s,
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+.member:hover {
+  transform: translateY(-3px);
+  border-color: var(--green-500);
+  box-shadow: 0 10px 24px rgba(47, 51, 49, 0.08);
+}
+.member::after {
+  /* Eckdreieck in Gruppenfarbe */
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 26px;
+  height: 26px;
+  background: var(--accent);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  transform-origin: top right;
+  transition: transform 0.25s;
+}
+.member:hover::after {
+  transform: scale(1.5);
+}
+
+.member__role {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green-700);
+}
+.member h4 {
+  margin-top: -8px;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 26px;
+}
+.member__nick {
+  margin-top: -16px;      /* hebt den Abstand zum Namen auf */
+  font-size: 15px;
+  color: var(--muted);
+}
+.member dl {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 2px 12px;
+  font-size: 14px;
+}
+.member dt {
+  color: var(--muted);
+}
+.member dd {
+  margin: 0;
+  font-weight: 600;
+}

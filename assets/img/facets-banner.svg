@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMaxYMid slice">
+  <style>
+    polygon { animation: pulse 8s ease-in-out infinite alternate; }
+    .d1 { animation-delay: 0.5s; } .d2 { animation-delay: 1s; } .d3 { animation-delay: 1.5s; } .d4 { animation-delay: 2s; } .d5 { animation-delay: 2.5s; } .d6 { animation-delay: 3s; }
+    @keyframes pulse { from { opacity: 0.35; } to { opacity: 0.85; } }
+    @media (prefers-reduced-motion: reduce) { polygon { animation: none; opacity: 0.6; } }
+  </style>
+  <polygon points="600,0 380,0 520,170" fill="#67b26f"/>
+  <polygon class="d2" points="380,0 520,170 300,210" fill="#4f9158"/>
+  <polygon class="d4" points="520,170 600,0 600,320" fill="#8bc68a"/>
+  <polygon class="d3" points="300,210 520,170 440,400" fill="#679a58"/>
+  <polygon class="d1" points="520,170 600,320 440,400" fill="#a6cf6a"/>
+  <polygon class="d5" points="600,320 600,400 440,400" fill="#d1d63a"/>
+  <polygon class="d6" points="300,210 440,400 220,400" fill="#5aa864"/>
+</svg>

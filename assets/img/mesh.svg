@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <style>
+    .wire { fill: none; stroke: rgba(255, 255, 255, 0.55); stroke-width: 1; stroke-dasharray: 2400; stroke-dashoffset: 2400; animation: draw 4s ease-out 0.3s forwards; }
+    .tri { opacity: 0; animation: glow 7s ease-in-out infinite; }
+    .t2 { animation-delay: 0.6s; } .t3 { animation-delay: 1.2s; } .t4 { animation-delay: 1.8s; } .t5 { animation-delay: 2.4s; } .t6 { animation-delay: 3s; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes glow { 0% { opacity: 0; } 18% { opacity: 0.9; } 60% { opacity: 0.75; } 100% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .wire { animation: none; stroke-dashoffset: 0; } .tri { animation: none; opacity: 0.8; } }
+  </style>
+  <path class="wire" d="M600,80 L470,150 L600,230 Z M470,150 L380,260 L600,230 M380,260 L470,400 L600,230 M380,260 L260,400 L470,400 M380,260 L250,300 L260,400 M250,300 L120,400 L260,400 M470,150 L330,190 L380,260 L250,300 L330,190"/>
+  <polygon class="tri" points="600,230 470,400 600,400" fill="#3d7d47"/>
+  <polygon class="tri t2" points="380,260 470,400 600,230" fill="#67b26f"/>
+  <polygon class="tri t3" points="380,260 260,400 470,400" fill="#679a58"/>
+  <polygon class="tri t4" points="470,150 600,230 600,80" fill="#a6cf6a"/>
+  <polygon class="tri t5" points="250,300 260,400 120,400" fill="#97cb74"/>
+  <polygon class="tri t6" points="330,190 380,260 250,300" fill="#d1d63a"/>
+</svg>
