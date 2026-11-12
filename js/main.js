@@ -10,6 +10,31 @@
   "use strict";
 
   document.documentElement.classList.add("js");
+
+  // Texte, die das Skript selbst erzeugt – Sprache aus <html lang="…">
+  const i18n = {
+    de: {
+      lightbox: "Bild in Großansicht",
+      gallery: "Bildergalerie",
+      prev: "Vorheriges Bild",
+      next: "Nächstes Bild",
+      image: "Bild",
+      showAll: (all, more) => `Alle ${all} anzeigen (+${more})`,
+      showLess: "Weniger anzeigen",
+      railnav: "Seitennavigation",
+    },
+    en: {
+      lightbox: "Enlarged image",
+      gallery: "Image gallery",
+      prev: "Previous image",
+      next: "Next image",
+      image: "Image",
+      showAll: (all, more) => `Show all ${all} (+${more})`,
+      showLess: "Show less",
+      railnav: "Page navigation",
+    },
+  };
+  const t = i18n[document.documentElement.lang.slice(0, 2)] || i18n.de;
   const reducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;
@@ -181,11 +206,117 @@
     });
   }
 
+  /* ---------- Bildergalerien (.gallery) ----------
+   * Bilder einfach untereinander in <div class="gallery"> schreiben.
+   * Ab zwei Bildern entstehen Pfeile, Punkte und Zähler automatisch.
+   * Klick auf ein Bild öffnet die Großansicht. */
+  let lightbox = null;
+  function openLightbox(img) {
+    if (!lightbox) {
+      lightbox = el("dialog", "lightbox");
+      lightbox.setAttribute("aria-label", t.lightbox);
+      lightbox.append(el("img"));
+      lightbox.addEventListener("click", () => lightbox.close());
+      document.body.append(lightbox);
+    }
+    const big = lightbox.querySelector("img");
+    big.src = img.currentSrc || img.src;
+    big.alt = img.alt;
+    if (typeof lightbox.showModal === "function") lightbox.showModal();
+  }
+
+  document.querySelectorAll(".gallery").forEach((gallery) => {
+    const images = [...gallery.querySelectorAll("img")];
+    if (!images.length) return;
+    const track = el("div", "gallery__track");
+    track.append(...images);
+    gallery.append(track);
+    images.forEach((img) =>
+      img.addEventListener("click", () => openLightbox(img)),
+    );
+    if (images.length < 2) return;
+
+    gallery.setAttribute("role", "region");
+    gallery.setAttribute("aria-roledescription", t.gallery);
+    const prev = el("button", "gallery__btn gallery__btn--prev");
+    const next = el("button", "gallery__btn gallery__btn--next");
+    prev.type = next.type = "button";
+    prev.setAttribute("aria-label", t.prev);
+    next.setAttribute("aria-label", t.next);
+
+    const bar = el("div", "gallery__bar");
+    const dots = el("div", "gallery__dots");
+    const count = el("span", "gallery__count");
+    const dotButtons = images.map((img, i) => {
+      const dot = el("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", `${t.image} ${i + 1}: ${img.alt}`);
+      dot.addEventListener("click", () => go(i));
+      dots.append(dot);
+      return dot;
+    });
+    bar.append(dots, count);
+    gallery.append(prev, next, bar);
+
+    let current = 0;
+    function go(i) {
+      const target = Math.max(0, Math.min(images.length - 1, i));
+      track.scrollTo({
+        left: target * track.clientWidth,
+        behavior: reducedMotion ? "auto" : "smooth",
+      });
+    }
+    function update() {
+      const width = track.clientWidth || 1;
+      current = Math.round(track.scrollLeft / width);
+      dotButtons.forEach((dot, i) =>
+        dot.classList.toggle("is-active", i === current),
+      );
+      count.textContent = `${current + 1} / ${images.length}`;
+      prev.disabled = current === 0;
+      next.disabled = current === images.length - 1;
+    }
+    prev.addEventListener("click", () => go(current - 1));
+    next.addEventListener("click", () => go(current + 1));
+    track.addEventListener("scroll", () => requestAnimationFrame(update), {
+      passive: true,
+    });
+    gallery.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") go(current - 1);
+      if (event.key === "ArrowRight") go(current + 1);
+    });
+    update();
+  });
+
+  /* ---------- Team: lange Gruppen einklappen (data-show="6") ---------- */
+  document.querySelectorAll(".team-group[data-show]").forEach((group) => {
+    const limit = Number(group.dataset.show);
+    const members = [...group.querySelectorAll(".member")];
+    if (!limit || members.length <= limit) return;
+    const extra = members.slice(limit);
+    const button = el("button", "team-group__more");
+    button.type = "button";
+    let open = false;
+    function render() {
+      extra.forEach((member) => (member.hidden = !open));
+      button.textContent = open
+        ? t.showLess
+        : t.showAll(members.length, extra.length);
+      button.setAttribute("aria-expanded", String(open));
+    }
+    button.addEventListener("click", () => {
+      open = !open;
+      render();
+    });
+    group.append(button);
+    render();
+  });
+
   /* ---------- Seitennavigation rechts aus section[data-nav] ---------- */
   const sections = [...document.querySelectorAll("[data-nav]")];
   if (sections.length) {
     const rail = el("nav", "railnav");
-    rail.setAttribute("aria-label", "Seitennavigation");
+    rail.setAttribute("aria-label", t.railnav);
     const links = sections.map((section) => {
       const link = el("a");
       link.href = "#" + section.id;

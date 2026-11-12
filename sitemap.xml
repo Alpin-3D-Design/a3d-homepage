@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://alpin3d-design.com/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alpin3d-design.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://alpin3d-design.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alpin3d-design.com/en/" />
+    <image:image><image:loc>https://alpin3d-design.com/assets/img/gondelbahn-abend.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alpin3d-design.com/assets/img/leitner_bs.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alpin3d-design.com/assets/img/pistenfahrzeug.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alpin3d-design.com/assets/img/techno-alpin-t60.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alpin3d-design.com/assets/img/planai.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://alpin3d-design.com/en/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alpin3d-design.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://alpin3d-design.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alpin3d-design.com/en/" />
+  </url>
+</urlset>

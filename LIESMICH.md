@@ -7,6 +7,7 @@ Statische Website ohne Build-Schritt. **Inhalte stehen ausschließlich in den HT
 | Pfad                      | Inhalt                                                      |
 | ------------------------- | ----------------------------------------------------------- |
 | `index.html`              | Startseite – nur Inhalte                                    |
+| `en/index.html`           | Startseite auf Englisch                                     |
 | `impressum.html`          | Impressum (Vorlage)                                         |
 | `datenschutz.html`        | Datenschutzerklärung (Vorlage)                              |
 | `css/fonts.css`           | lokal eingebundene Schriften                                |
@@ -84,8 +85,32 @@ Einfach einen vorhandenen Block kopieren und anpassen. Navigationselemente, Numm
 <li class="timeline__entry facet-card">
   <h3>2019</h3>
   <p>Was in diesem Jahr passiert ist.</p>
+  <div class="gallery">
+    <img src="assets/img/bild1.jpg" alt="Was auf dem Bild zu sehen ist" width="1920" height="1080" loading="lazy" decoding="async" />
+    <img src="assets/img/bild2.jpg" alt="…" width="1920" height="1080" loading="lazy" decoding="async" />
+  </div>
 </li>
 ```
+
+Die Galerie ist optional. Ab zwei Bildern entsteht automatisch ein Slider mit Pfeilen, Punkten und Wischen; ein Klick öffnet die Großansicht. Bilder werden nie abgeschnitten (16:9-Rahmen). `width`/`height` = echte Pixelmaße des Bildes, `alt` = kurze Beschreibung (wichtig für Google-Bildersuche).
+
+**Team-Gruppe einklappen** – `data-show="6"` an `<section class="team-group …">` zeigt nur die ersten 6 Karten plus Button „Alle anzeigen“.
+
+## Englische Version
+
+`en/index.html` ist die englische Fassung der Startseite – eine eigenständige Kopie mit übersetzten Texten. **Inhaltliche Änderungen bitte in beiden Dateien machen** (gleiche Struktur, gleiche Klassen). Unterschiede zur deutschen Datei:
+
+- Pfade beginnen mit `../` (z. B. `../assets/img/…`, `../css/…`).
+- `<html lang="en">`, eigene `canonical`/`og:url` auf `/en/`, Abschnitts-IDs auf Englisch (`#projects`, `#history`, `#join`, `#contact`).
+- Spielname: „Ski Region Simulator“.
+
+Texte, die `js/main.js` selbst erzeugt (Galerie-Buttons, „Alle anzeigen“ …), stehen oben in `main.js` im Objekt `i18n` und richten sich nach `<html lang>`. Impressum und Datenschutz gibt es nur auf Deutsch.
+
+## SEO
+
+- Titel, Beschreibung, Canonical, Open Graph und strukturierte Daten (JSON-LD) stehen im `<head>` von `index.html`.
+- `robots.txt` und `sitemap.xml` liegen im Hauptverzeichnis. **Domain prüfen:** überall ist `https://alpin3d-design.com/` eingetragen.
+- Nach dem Upload die Sitemap in der Google Search Console einreichen.
 
 **Abschnitt in der rechten Navigation** – `id` und `data-nav="Name"` an die `<section>` setzen.
 

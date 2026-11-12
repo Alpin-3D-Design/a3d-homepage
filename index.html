@@ -3,12 +3,101 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Alpin 3D Design – Kostenlose Mods</title>
+    <title>
+      Alpin 3D Design – Kostenlose Mods für Winter Resort Simulator &amp;
+      Skiregion Simulator
+    </title>
     <meta
       name="description"
-      content="Alpin 3D Design: kostenlose Mods für den Winter Resort Simulator und den Skiregion Simulator – Seilbahnen, Beschneiung, Pistenfahrzeuge und Skigebiete."
+      content="Kostenlose Mods für den Winter Resort Simulator (WRS 2) und den Skiregion Simulator: LEITNER Seilbahnen, A3D SNOW.Management mit Sufag-, Techno Alpin- und Lenco-Schneeerzeugern, Prinoth-Pistenfahrzeuge und Maps wie die Planai."
     />
-    <link rel="icon" href="assets/img/favicon.png" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Alpin 3D Design" />
+    <meta name="theme-color" content="#3d7d47" />
+    <!-- Domain anpassen, falls die Seite unter einer anderen Adresse läuft -->
+    <link rel="canonical" href="https://alpin3d-design.com/" />
+    <!-- Sprachversionen (Gegenstück in en/index.html) -->
+    <link rel="alternate" hreflang="de" href="https://alpin3d-design.com/" />
+    <link rel="alternate" hreflang="en" href="https://alpin3d-design.com/en/" />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://alpin3d-design.com/en/"
+    />
+
+    <!-- Vorschau beim Teilen (Discord, Facebook, WhatsApp, X …) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Alpin 3D Design" />
+    <meta property="og:url" content="https://alpin3d-design.com/" />
+    <meta
+      property="og:title"
+      content="Alpin 3D Design – Kostenlose Mods für WRS &amp; SRS"
+    />
+    <meta
+      property="og:description"
+      content="LEITNER Seilbahnen, Schneeerzeuger, Pistenfahrzeuge und Skigebiete – kostenlos für den Winter Resort Simulator und den Skiregion Simulator."
+    />
+    <meta
+      property="og:image"
+      content="https://alpin3d-design.com/assets/img/gondelbahn-abend.jpg"
+    />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1096" />
+    <meta
+      property="og:image:alt"
+      content="LEITNER Gondelbahn am Abend im Winter Resort Simulator"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://alpin3d-design.com/#org",
+            "name": "Alpin 3D Design",
+            "alternateName": ["A3D", "LSBrandi Modding"],
+            "url": "https://alpin3d-design.com/",
+            "logo": "https://alpin3d-design.com/assets/img/logo.png",
+            "foundingDate": "2013",
+            "slogan": "passion never fails",
+            "email": "info@alpin3d-design.com",
+            "sameAs": [
+              "https://www.youtube.com/@Alpin3DDesign",
+              "https://www.facebook.com/alpin3ddesign",
+              "https://www.instagram.com/alpin3ddesign/",
+              "https://steamcommunity.com/id/alpin3d-design/myworkshopfiles/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://alpin3d-design.com/#website",
+            "url": "https://alpin3d-design.com/",
+            "name": "Alpin 3D Design",
+            "inLanguage": "de",
+            "publisher": { "@id": "https://alpin3d-design.com/#org" }
+          }
+        ]
+      }
+    </script>
+
+    <link rel="icon" href="assets/img/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/img/favicon.png" />
+    <link
+      rel="preload"
+      href="assets/img/leitner_bs.jpg"
+      as="image"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/source-sans-3-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/railnav.css" />
@@ -22,6 +111,7 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
+    <main>
     <!-- =====================================================================
      TITELSEITE
      Eine Slide = ein <article class="hero__slide"> mit Bild und drei Texten.
@@ -30,8 +120,11 @@
     <section id="top" class="hero" data-nav="Start" data-interval="6500">
       <div class="container hero__inner">
         <a class="hero__logo" href="#top"
-          ><img src="assets/img/logo.png" alt="Alpin 3D Design"
-        /></a>
+          ><img src="assets/img/logo.png" alt="Alpin 3D Design" width="1200" height="400" /></a>
+        <nav class="lang-switch" aria-label="Sprache">
+          <a href="index.html" lang="de" aria-current="page">DE</a>
+          <a href="en/index.html" lang="en" hreflang="en">EN</a>
+        </nav>
         <h1 class="sr-only">
           Alpin 3D Design – kostenlose Mods für den Winter Resort Simulator und
           den Skiregion Simulator
@@ -42,8 +135,7 @@
             <img
               class="focus-right hero__img"
               src="assets/img/leitner_bs.jpg"
-              alt=""
-            />
+              alt="LEITNER Sesselbahn im Winter Resort Simulator 2" width="2048" height="1077" fetchpriority="high" />
             <!-- <div class="hero__copy">
               <p class="eyebrow">Beschneiung · 100 % kostenlos</p>
               <h2>Schnee auf Knopfdruck.</h2>
@@ -59,7 +151,7 @@
             class="hero__slide"
             data-label="Gondelbahn · Winter Resort Simulator"
           >
-            <img class="hero__img" src="assets/img/gondelbahn-wrs.jpg" alt="" />
+            <img class="hero__img" src="assets/img/gondelbahn-wrs.jpg" alt="Gondelbahn im Winter Resort Simulator" width="1920" height="1077" loading="lazy" decoding="async" />
             <!-- <div class="hero__copy">
               <p class="eyebrow">Seilbahnen · Winter Resort Simulator</p>
               <h2>Wintersport, Polygon für Polygon.</h2>
@@ -74,7 +166,7 @@
             class="hero__slide"
             data-label="Projekt Brunn · Skiregion Simulator"
           >
-            <img class="hero__img" src="assets/img/brunn.jpg" alt="" />
+            <img class="hero__img" src="assets/img/brunn.jpg" alt="Leitner 3S-Bahn von Projekt Brunn im Skiregion Simulator" width="1800" height="1013" loading="lazy" decoding="async" />
             <!-- <div class="hero__copy">
               <p class="eyebrow">Projekt Brunn · Skiregion Simulator</p>
               <h2>Die erste 3S-Bahn im Spiel.</h2>
@@ -93,8 +185,7 @@
             <img
               class="hero__img"
               src="assets/img/techno-alpin-t60.jpg"
-              alt=""
-            />
+              alt="Techno Alpin T60 Schneeerzeuger im Skiregion Simulator" width="1800" height="1013" loading="lazy" decoding="async" />
             <!-- <div class="hero__copy">
               <p class="eyebrow">Techno Alpin Pack · Skiregion Simulator</p>
               <h2>Unser größtes Beschneiungspack.</h2>
@@ -109,7 +200,7 @@
             class="hero__slide"
             data-label="Pistenfahrzeuge · Winter Resort Simulator"
           >
-            <img class="hero__img" src="assets/img/pistenfahrzeug.jpg" alt="" />
+            <img class="hero__img" src="assets/img/pistenfahrzeug.jpg" alt="Pistenfahrzeug im Winter Resort Simulator" width="1800" height="1012" loading="lazy" decoding="async" />
             <!-- <div class="hero__copy">
               <p class="eyebrow">Pistenfahrzeuge · Winter Resort Simulator</p>
               <h2>Perfekte Piste, jede Nacht.</h2>
@@ -168,8 +259,7 @@
             <figure class="step__media step__media--grid">
               <img
                 src="assets/img/brunn.jpg"
-                alt="Referenz: Bergstation Brunn"
-              />
+                alt="Referenz: Bergstation Brunn" width="1800" height="1013" loading="lazy" decoding="async" />
             </figure>
             <div class="step__body">
               <h3>Referenz</h3>
@@ -191,8 +281,7 @@
             <figure class="step__media step__media--contain">
               <img
                 src="assets/img/wireframe.png"
-                alt="Drahtgittermodell eines Schneeerzeugers"
-              />
+                alt="Drahtgittermodell eines Schneeerzeugers" width="769" height="1047" loading="lazy" decoding="async" />
             </figure>
             <div class="step__body">
               <h3>Modellierung</h3>
@@ -214,8 +303,7 @@
             <figure class="step__media">
               <img
                 src="assets/img/editor-modell.jpg"
-                alt="Untexturiertes Modell im 3D-Editor"
-              />
+                alt="Untexturiertes Modell im 3D-Editor" width="770" height="827" loading="lazy" decoding="async" />
             </figure>
             <div class="step__body">
               <h3>Detail &amp; Rigging</h3>
@@ -238,8 +326,7 @@
               <img
                 class="focus-right"
                 src="assets/img/everest.jpeg"
-                alt="Texturierter Sufag Schneeerzeuger"
-              />
+                alt="Texturierter Sufag Schneeerzeuger" width="2048" height="1088" loading="lazy" decoding="async" />
             </figure>
             <div class="step__body">
               <h3>UV &amp; Texturen</h3>
@@ -261,8 +348,7 @@
               <img
                 class="focus-left"
                 src="assets/img/code.png"
-                alt="Lua-Quellcode einer Mod"
-              />
+                alt="Lua-Quellcode einer Mod" width="1736" height="636" loading="lazy" decoding="async" />
             </figure>
             <div class="step__body">
               <h3>Integration &amp; Scripting</h3>
@@ -285,8 +371,7 @@
               <img
                 class="focus-right"
                 src="assets/img/pistenfahrzeug.jpg"
-                alt="Pistenfahrzeug im Test"
-              />
+                alt="Pistenfahrzeug im Test" width="1800" height="1012" loading="lazy" decoding="async" />
             </figure>
             <div class="step__body">
               <h3>Testing</h3>
@@ -308,8 +393,7 @@
             <figure class="step__media">
               <img
                 src="assets/img/gondelbahn-wrs.jpg"
-                alt="Fertige Gondelbahn im Spiel"
-              />
+                alt="Fertige Gondelbahn im Spiel" width="1920" height="1077" loading="lazy" decoding="async" />
             </figure>
             <div class="step__body">
               <h3>Release</h3>
@@ -351,8 +435,7 @@
               <img
                 class="project__img"
                 src="assets/img/gondelbahn-abend.jpg"
-                alt="LEITNER Ropeways"
-              />
+                alt="LEITNER Ropeways" width="1920" height="1096" loading="lazy" decoding="async" />
               <div class="project__card facet-card">
                 <p class="eyebrow">Seilbahnen</p>
                 <h3>LEITNER Ropeways</h3>
@@ -371,8 +454,7 @@
               <img
                 class="focus-right project__img"
                 src="assets/img/pistenfahrzeug.jpg"
-                alt="Pistenfahrzeug"
-              />
+                alt="Pistenfahrzeug" width="1800" height="1012" loading="lazy" decoding="async" />
               <div class="project__card facet-card">
                 <p class="eyebrow">Fahrzeuge & Schneeerzeuger</p>
                 <h3>A3D SNOW.Management</h3>
@@ -392,8 +474,7 @@
               <img
                 class="focus-right project__img"
                 src="assets/img/techno-alpin-t60.jpg"
-                alt="Techno Alpin T60"
-              />
+                alt="Techno Alpin T60" width="1800" height="1013" loading="lazy" decoding="async" />
               <div class="project__card facet-card">
                 <p class="eyebrow">Beschneiung</p>
                 <h3>Techno Alpin Pack</h3>
@@ -415,8 +496,7 @@
               <img
                 class="focus-right project__img"
                 src="assets/img/planai.jpg"
-                alt="Planai AddOn"
-              />
+                alt="Planai AddOn" width="2048" height="1151" loading="lazy" decoding="async" />
               <div class="project__card facet-card">
                 <p class="eyebrow">Maps</p>
                 <h3>Planai AddOn</h3>
@@ -451,24 +531,32 @@
             <p>
               LSBrandi und AMC Modding werden durch Thomas Brandl gegründet. Das Ziel: die realitätsnahe Nachbildung der Schladminger Planai! 
             </p>
-            <br>
-            <img
+            <div class="gallery">
+              <img
                 src="assets/img/planai_2013.jpeg"
-                alt="Quellcode des Snow.Manager"
-                height="400"
+                alt="Erste Version der Schladminger Planai im Skiregion Simulator (2013)"
+                width="943"
+                height="753"
+                loading="lazy"
+                decoding="async"
               />
+            </div>
           </li>
           <li class="timeline__entry facet-card">
             <h3>2014</h3>
             <p>
               Die Planai wächst weiter und immer mehr Leute arbeiten an dem ambitionierten Projekt der einzigen realen Nachbildung eines Skigebiets im Skiregion Simulator von Giants Software mit. Wir durften Veit und Simon im Team willkommen heißen.
             </p>
-            <br>
-            <img
+            <div class="gallery">
+              <img
                 src="assets/img/planai_2014.jpg"
-                alt="Quellcode des Snow.Manager"
-                height="400"
+                alt="Ausbau der Planai-Map im Skiregion Simulator (2014)"
+                width="1920"
+                height="1080"
+                loading="lazy"
+                decoding="async"
               />
+            </div>
           </li>
           <li class="timeline__entry facet-card">
             <h3>2015</h3>
@@ -477,11 +565,16 @@
               für das zukünftige Techno Alpin Pack. Auch die erste Map von
               LSBrandi Modding, Grosseck, geht online. Ganz nebenbei beginnen Modder des weltbekannten Mountain Modding Teams die Projekte des Herrn Brandl zu unterstützen. Dadurch kamen Sevi, Nick, Tim und Tom ins Team.
             </p>
-            <img
+            <div class="gallery">
+              <img
                 src="assets/img/grosseck_2015.jpg"
-                alt="Quellcode des Snow.Manager"
-                height="400"
+                alt="Grosseck – erste Map von LSBrandi Modding für den Skiregion Simulator"
+                width="1500"
+                height="842"
+                loading="lazy"
+                decoding="async"
               />
+            </div>
           </li>
           <li class="timeline__entry facet-card is-active">
             <h3>2016</h3>
@@ -490,15 +583,20 @@
               den SRS, kurz darauf die erste frei platzierbare Gemini
               Schneilanze. Das Sufag Compact Power Pack bringt erstmals Sufag
               Schneeerzeuger ins Spiel. Nach einer Umstrukturierung im Team wird
-              aus LSBrandi und AMC Modding endgültig Alpin 3D Design. Unser Know-How im Bereich Modelling stiegt durch Max und Machi erheblich und auch unsere Schneekanonen bekamen erstmalig selbst entwickelte Funktionen.
+              aus LSBrandi und AMC Modding endgültig Alpin 3D Design. Unser Know-How im Bereich Modelling stieg durch Max und Machi erheblich und auch unsere Schneekanonen bekamen erstmalig selbst entwickelte Funktionen.
               Es folgt das bis heute größte Beschneiungsmodpack für den SRS, das Techno Alpin Pack –
               und am letzten Tag des Jahres die erste Betaversion der im Jahr 2013 begonnenen Planai.
             </p>
-            <img
+            <div class="gallery">
+              <img
                 src="assets/img/prinoth_2016.jpg"
-                alt="Quellcode des Snow.Manager"
-                height="400"
+                alt="Prinoth Everest Pistenfahrzeug für den Skiregion Simulator"
+                width="2928"
+                height="1431"
+                loading="lazy"
+                decoding="async"
               />
+            </div>
           </li>
           <li class="timeline__entry facet-card">
             <h3>2017</h3>
@@ -508,79 +606,133 @@
               Software, die unabhängig vom SRS arbeitet und den Saisonwechsel
               enorm erleichtert. Außerdem starteten wir in eine Entwicklung, die wir nie finalisieren werden: Artificial Snow Control, kurz ASC. 
               Als Beschneiungsmanagementsystem sollte dieser Skriptmod eine realistische Beschneiung durch zentrale Ansteuerung, Wetter, Pumpstationen und 
-              realistischer Bediehnung aller auch nicht hauseigener Schneeerzeuger ermöglichen. Der Winter Resort Simulator als Nachfolger des SRS erschien jedoch eher.
+              realistischer Bedienung aller auch nicht hauseigener Schneeerzeuger ermöglichen. Der Winter Resort Simulator als Nachfolger des SRS erschien jedoch früher.
             </p>
-            <img
+            <div class="gallery">
+              <img
                 src="assets/img/brunn_2017.jpg"
-                alt="Quellcode des Snow.Manager"
-                height="400"
+                alt="Projekt Brunn mit der Leitner 3S-Bahn im Skiregion Simulator"
+                width="1920"
+                height="1080"
+                loading="lazy"
+                decoding="async"
               />
+              <img
+                src="assets/img/brunn.jpg"
+                alt="Bergstation der 3S-Bahn von Projekt Brunn"
+                width="1800"
+                height="1013"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </li>
           <li class="timeline__entry facet-card">
             <h3>2018</h3>
             <p>
               Mit einem Livestream wird das Jahr eingeläutet: 6 Jahre LSBrandi
               Modding &amp; Alpin 3D Design. Noch nie liefen so viele Projekte
-              gleichzeitig. Wir veröffentlichten ein großes Update für das Sufag Pack mit der Peak und sämtlichen Turmvariationen. Ebenfalls enthalten war die ersteAuskopplung aus unserem ASC, das realistische Startverhalten einer Schneekanone.
+              gleichzeitig. Wir veröffentlichten ein großes Update für das Sufag Pack mit der Peak und sämtlichen Turmvariationen. Ebenfalls enthalten war die erste Auskopplung aus unserem ASC, das realistische Startverhalten einer Schneekanone.
               Eine weitere Map erblickte das Licht der Welt: Edelsee und mit ihr auch unsere erste eigene Seilbahnsteuerung RWC.
-              Zusammen mit Snowman73 schafften wir es, am ende des Jahres das Techno Alpin Lanzenpack allen kostenfrei zum Download zur Verfügung zu stellen.
+              Zusammen mit Snowman73 schafften wir es, am Ende des Jahres das Techno Alpin Lanzenpack allen kostenfrei zum Download zur Verfügung zu stellen.
             </p>
-            <img
+            <div class="gallery">
+              <img
                 src="assets/img/edelsee_2018.jpg"
-                alt="Quellcode des Snow.Manager"
-                height="400"
+                alt="Map Edelsee mit eigener Seilbahnsteuerung RWC"
+                width="1600"
+                height="900"
+                loading="lazy"
+                decoding="async"
               />
+            </div>
           </li>
           <li class="timeline__entry facet-card">
             <h3>2019</h3>
             <p>
               Während es in der Branche einiges an Unruhe aufgrund eines neu angekündigten Simulationsspiels gab, entwickelten wir eifrig weiter an Edelsee, unserer Schneekanonensteuerung ASC als auch unserer neuen Seilbahnsteuerung RWC. Im Februar konnten wir
-              dadurch das erste mal eine Leitner Telemix Anlage realisieren. Speicher- & Multiplayerfähig natürlich from scratch!
+              dadurch das erste Mal eine Leitner Telemix Anlage realisieren. Speicher- & Multiplayerfähig natürlich from scratch!
             </p>
-            <img
+            <div class="gallery">
+              <img
                 src="assets/img/edelsee_2019.jpg"
-                alt="Quellcode des Snow.Manager"
-                height="400"
+                alt="Leitner Telemix-Anlage auf der Map Edelsee"
+                width="1600"
+                height="900"
+                loading="lazy"
+                decoding="async"
               />
+            </div>
           </li>
           <li class="timeline__entry facet-card">
             <h3>2020</h3>
             <p>
-              In diesem Jahr war es dann nun soweit: Der WRS war draußen, die Moddingtools ebenfalls und somit veröffentlichten wir zusammen mit dem SRTD unser bekanntes Sufag Pack aus dem SRS auch hier. Natürlich mit selbigem Funktionsumfgang. In den nachfolgenden Jahren
-              wurde dieses immer weiter durch Schneeerzeuger der Firma Techno Alpin und Lenko sowie Pistenfahrzeuge der Firma Prinoth erweitert, sodass schnell eine Umbenennung in A3D SNOW.Management erfolgte. Inzwischen ist dieser Mod mit aktuell knapp 25.000 Abbonenten und 5 Sternen der
+              In diesem Jahr war es dann nun soweit: Der WRS war draußen, die Moddingtools ebenfalls und somit veröffentlichten wir zusammen mit dem SRTD unser bekanntes Sufag Pack aus dem SRS auch hier. Natürlich mit selbigem Funktionsumfang. In den nachfolgenden Jahren
+              wurde dieses immer weiter durch Schneeerzeuger der Firma Techno Alpin und Lenco sowie Pistenfahrzeuge der Firma Prinoth erweitert, sodass schnell eine Umbenennung in A3D SNOW.Management erfolgte. Inzwischen ist dieser Mod mit aktuell knapp 25.000 Abonnenten und 5 Sternen der
               am häufigsten heruntergeladene Mod für den Winter Resort Simulator 2. Außerdem wurde durch Roby unser Prinoth Pack für den SRS signifikant erweitert.
             </p>
-            <img
+            <div class="gallery">
+              <img
                 src="assets/img/WRS2020.jpg"
-                alt="Quellcode des Snow.Manager"
-                height="400"
+                alt="Sufag Schneeerzeuger im Winter Resort Simulator"
+                width="2048"
+                height="1152"
+                loading="lazy"
+                decoding="async"
               />
+            </div>
           </li>
           <li class="timeline__entry facet-card">
             <h3>2021</h3>
             <p>
-              Neben den zahlreichen Updates unseres SNOW.Management Packs machte sich ein Team an ein Update unserer 2016 veröfentlichten Map Grosseck. Die damals werbewirksam auf der Karte angekündigten Großinvestitionen in den Ausbau des Skigebiets wurden damit Realität. 
+              Neben den zahlreichen Updates unseres SNOW.Management Packs machte sich ein Team an ein Update unserer 2016 veröffentlichten Map Grosseck. Die damals werbewirksam auf der Karte angekündigten Großinvestitionen in den Ausbau des Skigebiets wurden damit Realität. 
               Die Map bekam einen ganz neuen Abschnitt hinzu: die Hochalm. Dieses Update wird wohl unsererseits die letzte Veröffentlichung für den Skiregion Simulator bleiben. Gleichzeitig bleibt dies damit auch die einzige Anwendung unserer eigenen Seilbahnsteuerung, 
-              auf die wir knap 8 Jahre lang hingearbeitet haben.
+              auf die wir knapp 8 Jahre lang hingearbeitet haben.
             </p>
-            <img
+            <div class="gallery">
+              <img
                 src="assets/img/grosseck_2021.jpg"
-                alt="Quellcode des Snow.Manager"
-                height="400"
+                alt="Grosseck-Update mit der neuen Hochalm"
+                width="2048"
+                height="1152"
+                loading="lazy"
+                decoding="async"
               />
+            </div>
           </li>
           <li class="timeline__entry facet-card">
             <h3>2026</h3>
             <p>
               In den darauffolgenden Jahren pflegten wir unser A3D SNOW.Management weiter und portierten es in den WRS Season 2. Gleichzeitig warteten wir auch gespannt auf die ersten Modder, die den 2. großen Seilbahnhersteller Leitner Ropeways aus Südtirol in das Spiel bringen.
-              Nachdem dies doch eine ganze Zeit lang nicht passierte, entschlossen wir uns aufgrund der Tatsache, dass wir nunmehr seit 10 Jahren Leitner in der Simulation vertreten lassen, dies auf für den WRS 2 zu tun. In den Jahren entstanden, getrieben durch Dominik, Georg und Niklas zwei Sessellifte unterschiedlister
-              Bauserien, die wir zusammen mit unserer Implementierung der LEITCONTROL Steuerung anfang des Jahres veröffentlichten konnten. Ende 2026 folgte nun, getrieben durch Stefan und Baisi, auch die Erweiterung um zwei Kabinenbahnen.
+              Nachdem dies doch eine ganze Zeit lang nicht passierte, entschlossen wir uns aufgrund der Tatsache, dass wir nunmehr seit 10 Jahren Leitner in der Simulation vertreten lassen, dies auch für den WRS 2 zu tun. In den Jahren entstanden, getrieben durch Dominik, Georg und Niklas zwei Sessellifte unterschiedlichster
+              Bauserien, die wir zusammen mit unserer Implementierung der LEITCONTROL Steuerung Anfang des Jahres veröffentlichen konnten. Ende 2026 folgte nun, getrieben durch Stefan und Baisi, auch die Erweiterung um zwei Kabinenbahnen.
             </p>
-            <img
+            <div class="gallery">
+              <img
                 src="assets/img/leitner_2026.jpg"
-                alt="Quellcode des Snow.Manager"
-                height="400"
+                alt="LEITNER Ropeways Seilbahn im Winter Resort Simulator 2"
+                width="2048"
+                height="1152"
+                loading="lazy"
+                decoding="async"
               />
+              <img
+                src="assets/img/leitner_bs.jpg"
+                alt="LEITNER Sesselbahn mit LEITCONTROL-Steuerung im WRS 2"
+                width="2048"
+                height="1077"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                src="assets/img/gondelbahn-abend.jpg"
+                alt="LEITNER Kabinenbahn am Abend im Winter Resort Simulator 2"
+                width="1920"
+                height="1096"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </li>
         </ol>
       </div>
@@ -619,7 +771,7 @@
                   <li>Prinoth Everest</li>
                   <li>Gemini</li>
                   <li>A3D SNOW.Management</li>
-                  <li>Leitner Ropeways Pack</li>
+                  <li>LEITNER Ropeways</li>
                   <li>A3D Extensions</li>
                 </ul>
               </article>
@@ -646,11 +798,11 @@
                 </dl>
                 <ul class="tags">
                   <li>A3D SNOW.Management</li>
-                  <li>Leitner Ropeways Pack</li>
+                  <li>LEITNER Ropeways</li>
                 </ul>
               </article>
               <article class="member">
-                <p class="member__role">Inganing | 3D-Artist</p>
+                <p class="member__role">Ingaming | 3D-Artist</p>
                 <h4>Georg</h4>
                 <p class="member__nick">phoenix_07</p>
                 <dl>
@@ -659,7 +811,7 @@
                 </dl>
                 <ul class="tags">
                   <li>A3D SNOW.Management</li>
-                  <li>Leitner Ropeways Pack</li>
+                  <li>LEITNER Ropeways</li>
                 </ul>
               </article>
               <article class="member">
@@ -671,7 +823,7 @@
                   <dd>2022</dd>
                 </dl>
                 <ul class="tags">
-                  <li>Leitner Ropeways Pack</li>
+                  <li>LEITNER Ropeways</li>
                 </ul>
               </article>
               <article class="member">
@@ -684,7 +836,7 @@
                 </dl>
                 <ul class="tags">
                   <li>A3D SNOW.Management</li>
-                  <li>Leitner Ropeways Pack</li>
+                  <li>LEITNER Ropeways</li>
                 </ul>
               </article>
               <article class="member">
@@ -708,7 +860,7 @@
                   <dd>2026</dd>
                 </dl>
                 <ul class="tags">
-                  <li>Leitner Ropeways Pack</li>
+                  <li>LEITNER Ropeways</li>
                 </ul>
               </article>
             </div>
@@ -718,13 +870,17 @@
             <h3>Marketing | Validation</h3>
             <div class="members">
               <article class="member">
-                <p class="member__role">Validation</p>
+                <p class="member__role">Validation | 3D-Artist</p>
                 <h4>Lorenz</h4>
                 <p class="member__nick">Wolf</p>
                 <dl>
                   <dt>Dabei seit</dt>
-                  <dd>2020</dd>
+                  <dd>2021</dd>
                 </dl>
+                <ul class="tags">
+                  <li>LEITNER Ropeways</li>
+                  <li>A3D SNOW.Management</li>
+                </ul>
               </article>
               <article class="member">
                 <p class="member__role">Validation</p>
@@ -765,7 +921,7 @@
             </div>
           </section>
 
-          <section class="team-group team-group--core">
+          <section class="team-group team-group--core" data-show="6">
             <h3>Stammteam</h3>
             <div class="members">
               <article class="member">
@@ -806,6 +962,20 @@
                 </ul>
               </article>
               <article class="member">
+                <p class="member__role">3D-Artist</p>
+                <h4>Mika</h4>
+                <p class="member__nick">mango6278</p>
+                <dl>
+                  <dt>Dabei seit</dt>
+                  <dd>2020</dd>
+                </dl>
+                <ul class="tags">
+                  <li>Grosseck</li>
+                  <li>LEITNER Ropeways</li>
+                  <li>A3D SNOW.Management</li>
+                </ul>
+              </article>
+              <article class="member">
                 <p class="member__role">Mapping</p>
                 <h4>Nick</h4>
                 <p class="member__nick">nickpucker</p>
@@ -830,7 +1000,20 @@
                   <li>Grosseck</li>
                   <li>Edelsee</li>
                   <li>A3D SNOW.Control</li>
-                  <li>Leitner Pack</li>
+                  <li>LEITNER Ropeways</li>
+                </ul>
+              </article>
+              <article class="member">
+                <p class="member__role">3D-Artist</p>
+                <h4>Noah</h4>
+                <p class="member__nick">noahwerker</p>
+                <dl>
+                  <dt>Dabei seit</dt>
+                  <dd>2020</dd>
+                </dl>
+                <ul class="tags">
+                  <li>A3D SNOW.Control</li>
+                  <li>LEITNER Ropeways</li>
                 </ul>
               </article>
               <article class="member">
@@ -852,7 +1035,7 @@
                 <p class="member__nick">playgamer76</p>
                 <dl>
                   <dt>Dabei seit</dt>
-                  <dd>2015</dd>
+                  <dd>2021</dd>
                 </dl>
                 <ul class="tags">
                   <li>Grosseck</li>
@@ -895,7 +1078,7 @@
                 </dl>
                 <ul class="tags">
                   <li>A3D SNOW.Management</li>
-                  <li>Leitner Pack</li>
+                  <li>LEITNER Ropeways</li>
                 </ul>
               </article>
               <article class="member">
@@ -944,13 +1127,13 @@
           <p class="eyebrow">Wir suchen dich</p>
           <h2>Lust, mitzubauen?</h2>
           <p>
-            Wir suchen dringend Leute die Bock haben, mit uns coole, neue Pistenfahrzeuge & Seilbahnen in Skigebietssimulationen zu bringen.
-            Wenn du auch Bock hast, komm gern zu uns. Wir bauen gern auf deinen Grundkenntnissen auf und helfen dir dich weiter zu entwickeln!
+            Wir suchen dringend Leute, die Bock haben, mit uns coole, neue Pistenfahrzeuge & Seilbahnen in Skigebietssimulationen zu bringen.
+            Wenn du auch Bock hast, komm gern zu uns. Wir bauen gern auf deinen Grundkenntnissen auf und helfen dir, dich weiterzuentwickeln!
           </p>
-          <ul class="tags">-
+          <ul class="tags">
             <li>3D-Artist Modell</li>
             <li>3D-Artist Textur</li>
-            <li>Ingming</li>
+            <li>Ingaming</li>
             <li>Coding</li>
           </ul>
         </div>
@@ -1064,15 +1247,18 @@
       </div>
     </section>
 
+    </main>
+
     <footer class="site-footer">
       <div class="container">
-        <img src="assets/img/logo.png" alt="Alpin 3D Design" />
+        <img src="assets/img/logo.png" alt="Alpin 3D Design" width="1200" height="400" />
         <p>© 2013 - 2026 Alpin 3D Design · passion never fails</p>
         <nav aria-label="Fußzeile">
           <a href="#download">Download</a>
           <a href="#kontakt">Kontakt</a>
           <a href="impressum.html">Impressum</a>
           <a href="datenschutz.html">Datenschutz</a>
+          <a href="en/index.html" lang="en" hreflang="en">English</a>
         </nav>
       </div>
     </footer>
